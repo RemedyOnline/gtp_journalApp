@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #eaf5ff;
+	color: #333;
+	margin-top: 1rem;
+	padding: 20px;
+	line-height: 1.6;
+}
+
+header,
+footer {
+	text-align: center;
+	padding: 10px 0;
+	/* background-color: #3f51b5; */
+	/* color: white; */
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* #entry-container {
+} */

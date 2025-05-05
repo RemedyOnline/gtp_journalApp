@@ -1,0 +1,18 @@
+{
+	"name": "4_journalapp",
+	"version": "1.0.0",
+	"description": "labwork 4 for gtp",
+	"license": "ISC",
+	"author": "",
+	"type": "commonjs",
+	"main": "index.js",
+	"directories": {
+		"test": "jest"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"jest": "^29.7.0"
+	}
+}
