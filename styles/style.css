@@ -5,7 +5,8 @@
 }
 
 body {
-	background-color: #eaf5ff;
+	/* background-color: #eaf5ff; */
+	background-color: #f4f4f4;
 	color: #333;
 	margin-top: 1rem;
 	padding: 20px;
@@ -27,5 +28,90 @@ main {
 	margin: 0 auto;
 }
 
-/* #entry-container {
-} */
+#entry-container,
+#search-n-filter-container,
+#entries-container {
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#entry-form input,
+#entry-form textarea,
+#entry-form select,
+#search-n-filter-container input,
+#search-n-filter-container select {
+	width: 100%;
+	padding: 10px;
+	margin: 8px 0 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+#entry-form button {
+	background-color: #3f51b5;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+#entry-form button:hover {
+	background-color: #303f9f;
+}
+
+.entry {
+	border: 1px solid #ddd;
+	border-left: 4px solid #3f51b5;
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 4px;
+	background-color: #fafafa;
+}
+
+.entry h3 {
+	margin-bottom: 5px;
+}
+
+.entry .meta {
+	font-size: 0.9em;
+	color: #777;
+	margin-bottom: 10px;
+}
+
+.entry .action {
+	margin-top: 10px;
+}
+
+.entry .actions button {
+	background-color: transparent;
+	border: 1px solid #3f51b5;
+	color: #3f51b5;
+	padding: 5px 10px;
+	margin-right: 8px;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.entry .actions button:hover {
+	background-color: #3f51b5;
+	color: white;
+}
+
+@media (max-width: 600px) {
+	body {
+		padding: 10px;
+	}
+
+	#entry-form button,
+	.entry,
+	.actions button {
+		width: 100%;
+		margin-top: 10px;
+	}
+}
