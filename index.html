@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
    >
-   <title>Journy Journal - My Secret Gossipper</title>
+   <title>Journy Journal - Your Secret Gossipper</title>
    <link
       rel="stylesheet"
       href="/styles/style.css"
@@ -67,7 +67,7 @@
             name="filter-by-mood"
             id="filter-by-mood"
          >
-            <option value="">All Moods</option>
+            <option value="all">All Moods</option>
             <option value="Happy">Happy</option>
             <option value="Sad">Sad</option>
             <option value="Cool">Cool</option>
@@ -75,7 +75,10 @@
          </select>
       </section>
       <section>
-         <h2>Journal Entries</h2>
+         <div id="entries-heading">
+            <h2>Journal Entries</h2>
+            <p></p>
+         </div>
          <div id="entries-container">
 
          </div>
