@@ -11,6 +11,23 @@ const form = document.querySelector("#entry-form");
 const titleInput = document.querySelector("#title");
 const contentInput = document.querySelector("#content");
 const moodInput = document.querySelector("#mood");
+const openModalBtn = document.getElementById("open-modal-btn");
+const closeModalBtn = document.getElementById("close-modal-btn");
+const entryModal = document.getElementById("entry-container");
+
+openModalBtn.addEventListener("click", () => {
+	entryModal.classList.remove("hidden");
+});
+
+closeModalBtn.addEventListener("click", () => {
+	entryModal.classList.add("hidden");
+});
+
+entryModal.addEventListener("click", (e) => {
+	if (e.target === entryModal) {
+		entryModal.classList.add("hidden");
+	}
+});
 
 export function renderEntries(entries) {
 	entriesContainer.innerHTML = "";
@@ -28,7 +45,8 @@ export function renderEntries(entries) {
       <h3>${entry.title}</h3>
       <p>${entry.content}</p>
       <p><strong>Mood:</strong> ${entry.mood}</p>
-      <p class="timestamp">${formatDate(entry.timestamp)}
+      <p class="meta">${formatDate(entry.timestamp)}
+      <div class="entry-actions">
       <div class="entry-buttons">
       <button data-id="${entry.id}" class="edit-btn">Edit</button>
       <button data-id="${entry.id}" class="delete-btn">Delete</button>
