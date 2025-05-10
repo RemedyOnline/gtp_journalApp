@@ -8,6 +8,8 @@ let closeModalBtn;
 let entryModal;
 
 export function initialUI() {
+	console.log("🚀 initialUI() is running...");
+
 	entriesContainer = document.querySelector("#entries-container");
 	form = document.querySelector("#entry-form");
 	titleInput = document.querySelector("#title");
@@ -19,13 +21,17 @@ export function initialUI() {
 
 	if (openModalBtn && entryModal) {
 		openModalBtn.addEventListener("click", () => {
+			console.log("✅ Open button clicked");
 			entryModal.classList.remove("hidden");
+			entryModal.classList.add("show");
 		});
 	}
 
 	if (closeModalBtn && entryModal) {
 		closeModalBtn.addEventListener("click", () => {
+			console.log("❌ Close button clicked");
 			entryModal.classList.add("hidden");
+			entryModal.classList.remove("show");
 		});
 	}
 
@@ -33,6 +39,7 @@ export function initialUI() {
 		entryModal.addEventListener("click", (e) => {
 			if (e.target === entryModal) {
 				entryModal.classList.add("hidden");
+				entryModal.classList.remove("show");
 			}
 		});
 	}

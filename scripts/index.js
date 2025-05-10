@@ -51,6 +51,9 @@ form.addEventListener("submit", (e) => {
 	saveToStorage(getEntries());
 	renderEntries(getEntries());
 	clearForm();
+
+	entryModal.classList.add("hidden");
+	entryModal.classList.remove("show");
 });
 
 entriesContainer.addEventListener("click", (e) => {
@@ -66,6 +69,7 @@ entriesContainer.addEventListener("click", (e) => {
 		const entry = getEntries().find((e) => e.id === id);
 		prefillForm(entry);
 		entryModal.classList.remove("hidden");
+		entryModal.classList.add("show");
 	}
 });
 
