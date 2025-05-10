@@ -1,18 +1,3 @@
-// this contains the logic for Journal Entry - (CRUD)
-// Thus, Creation, Editing, Searching, Deletion and Filtering...
-// --------- ToDo's ------------
-// addEntry(entry)
-// deleteEntry(id)
-// updateEntry(id, updatedEntry)
-// getEntries(),
-// setEntries(data),
-// filterEntriesByMood(mood)
-// searchEntries(query)
-//... export these functions to use in other modules...
-
-// ADD SORT FUNCTIONALITY...
-// Creating mood-based reports or summaries
-
 // creating an array to store journal entries...
 let entries = [];
 
@@ -42,7 +27,7 @@ export function updateEntry(id, updatedEntry) {
 	entries = entries.map((entry) =>
 		entry.id === id ? { ...entry, ...updatedEntry } : entry
 	);
-	console.log(title, "edited successfully");
+	// console.log(title, "edited successfully");
 }
 
 // getEntries()
