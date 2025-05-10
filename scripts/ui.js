@@ -8,7 +8,7 @@ let closeModalBtn;
 let entryModal;
 
 export function initialUI() {
-	console.log("🚀 initialUI() is running...");
+	console.log("initialUI() is running...");
 
 	entriesContainer = document.querySelector("#entries-container");
 	form = document.querySelector("#entry-form");
@@ -21,7 +21,7 @@ export function initialUI() {
 
 	if (openModalBtn && entryModal) {
 		openModalBtn.addEventListener("click", () => {
-			console.log("✅ Open button clicked");
+			console.log("Open button clicked");
 			entryModal.classList.remove("hidden");
 			entryModal.classList.add("show");
 		});
@@ -29,7 +29,7 @@ export function initialUI() {
 
 	if (closeModalBtn && entryModal) {
 		closeModalBtn.addEventListener("click", () => {
-			console.log("❌ Close button clicked");
+			console.log("Close button clicked");
 			entryModal.classList.add("hidden");
 			entryModal.classList.remove("show");
 		});
@@ -69,17 +69,22 @@ export function renderEntries(entries) {
 
 	entries.forEach((entry) => {
 		const entryItem = document.createElement("div");
-		entryItem.classList.add("entry");
+		entryItem.classList.add("entry", `mood-${entry.mood}`);
 		entryItem.innerHTML = `
-			<h3>${entry.title}</h3>
-			<p>${entry.content}</p>
-			<p><strong>Mood:</strong> ${entry.mood}</p>
-			<p class="meta">${formatDate(entry.timestamp)}</p>
+			<div class="flex">
+				<h3>${entry.title}</h3>
+				<span class="mood mood-${entry.mood}">${entry.mood}</span>
+			</div>
+			<div class="meta">
+				<span class="meta">${formatDate(entry.timestamp)}</span>
+			</div>
+			<div class="content">
+				<p>${entry.content}</p>
+			</div>
 			<div class="entry-actions">
-				<div class="entry-buttons">
-					<button data-id="${entry.id}" class="edit-btn">Edit</button>
-					<button data-id="${entry.id}" class="delete-btn">Delete</button>
-				</div>
+				<button data-id="${entry.id}" class="edit-btn">Edit</button>
+				<button data-id="${entry.id}" class="delete-btn">Delete</button>
+			</div>
 			</div>
 		`;
 		entriesContainer.appendChild(entryItem);

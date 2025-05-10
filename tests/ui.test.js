@@ -54,4 +54,12 @@ describe("UI related test cases...", () => {
 		prefillForm(sampleData);
 		expect(document.querySelector("#title").value).toBe(sampleData.title);
 	});
+
+	test("formateDate() should convert ISO string to local data format", () => {
+		const isoString = "2025-04-20T16:48:00.000Z";
+		const formattedDate = formatDate(isoString);
+		const expectedDate = new Date(isoString).toLocaleDateString();
+
+		expect(formattedDate).toBe(expectedDate);
+	});
 });

@@ -12,6 +12,19 @@
       rel="stylesheet"
       href="/styles/style.css"
    >
+   <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+   >
+   <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+   >
+   <link
+      href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Outfit:wght@100..900&family=Rubik+Beastly&family=Style+Script&display=swap"
+      rel="stylesheet"
+   >
 </head>
 
 <body>
@@ -26,80 +39,93 @@
       >
          <div class="modal-content">
             <h2>New Entry</h2>
-            <span
+            <button
                id="close-modal-btn"
                class="close-btn"
-            >&times;</span>
+            >&times;</button>
             <form
                action="#"
                id="entry-form"
             >
-               <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="Enter your title..."
-                  required
-               >
-               <textarea
-                  name="content"
-                  id="content"
-                  rows="5"
-                  placeholder="Write your journal..."
-                  required
-               ></textarea>
-               <label for="mood">Mood:</label>
-               <select
-                  name="mood"
-                  id="mood"
-                  required
-               >
-                  <option value="">Select Mood</option>
-                  <option value="Happy">Happy</option>
-                  <option value="Sad">Sad</option>
-                  <option value="Cool">Cool</option>
-                  <option value="Stressed">Stressed</option>
-               </select>
+               <div>
+                  <label for="title">Title</label>
+                  <input
+                     type="text"
+                     name="title"
+                     id="title"
+                     placeholder="Enter your title..."
+                     required
+                  >
+               </div>
+               <div>
+                  <label for="content">Journal Entry</label>
+                  <textarea
+                     name="content"
+                     id="content"
+                     rows="5"
+                     placeholder="Write your journal..."
+                     required
+                  ></textarea>
+               </div>
+               <div>
+                  <label for="mood">Mood</label>
+                  <select
+                     name="mood"
+                     id="mood"
+                     required
+                  >
+                     <option value="">Select Mood</option>
+                     <option value="Happy">Happy</option>
+                     <option value="Sad">Sad</option>
+                     <option value="Cool">Cool</option>
+                     <option value="Stressed">Stressed</option>
+                  </select>
+               </div>
                <button type="submit">Save Entry</button>
             </form>
          </div>
       </section>
+
       <section id="search-n-filter-container">
          <input
             type="text"
             name="search"
             id="search"
-            placeholder="Search by title/content..."
+            placeholder="Search by title or content..."
          >
-         <label for="filter-by-mood">Filter by Mood:</label>
-         <select
-            name="filter-by-mood"
-            id="filter-by-mood"
-         >
-            <option value="all">All Moods</option>
-            <option value="Happy">Happy</option>
-            <option value="Sad">Sad</option>
-            <option value="Cool">Cool</option>
-            <option value="Stressed">Stressed</option>
-         </select>
+         <div id="filter-container">
+            <label for="filter-by-mood">Filter by Mood:</label>
+            <select
+               name="filter-by-mood"
+               id="filter-by-mood"
+            >
+               <option value="all">All Moods</option>
+               <option value="Happy">Happy</option>
+               <option value="Sad">Sad</option>
+               <option value="Cool">Cool</option>
+               <option value="Stressed">Stressed</option>
+            </select>
+         </div>
       </section>
+
       <section>
          <div id="entries-heading">
             <h2>Journal Entries</h2>
-            <p></p>
          </div>
          <div id="entries-container">
-
          </div>
       </section>
+
       <button
          id="open-modal-btn"
          class="floating-btn"
-      >Add New <br> Journal</button>
+      >
+         <span>+</span>
+      </button>
    </main>
 
    <footer>
-      <p>A Journy Journal Corperation - &copy; 2025 </p>
+      <p>A Journy Journal Corporation - &copy; 2025</p>
    </footer>
 
    <script
