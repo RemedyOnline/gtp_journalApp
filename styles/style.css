@@ -137,9 +137,9 @@ label[for="filter-by-mood"] {
 
 #entries-heading h2 {
 	font-weight: 700;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	color: var(--dark);
-	font-family: "Style Script", "Beau Rivage";
+	font-family: "Beau Rivage", "Style Script";
 	text-align: center;
 	width: 100%;
 }
