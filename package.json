@@ -7,14 +7,16 @@
 	"type": "commonjs",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest",
-		"test:watch": "jest --watch"
+		"test": "jest --coverage --verbose",
+		"test:watch": "jest --coverage"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.27.1",
 		"@babel/plugin-transform-modules-commonjs": "^7.27.1",
 		"@babel/preset-env": "^7.27.2",
 		"babel-jest": "^29.7.0",
-		"jest": "^29.7.0"
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"jsdom": "^26.1.0"
 	}
 }

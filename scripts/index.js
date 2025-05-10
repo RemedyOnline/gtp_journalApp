@@ -1,12 +1,3 @@
-// this is the entry point that connects all functionalities...
-// --------- ToDo's ------------
-// initializes the app
-// gets data from storage
-// wires up UI events to journal logic
-// calls render when data changes
-
-// main.js
-
 import {
 	addEntry,
 	deleteEntry,
@@ -18,16 +9,23 @@ import {
 } from "./journal.js";
 
 import { getFromStorage, saveToStorage } from "./storage.js";
-import { renderEntries, clearForm, prefillForm } from "./ui.js";
+import { renderEntries, clearForm, prefillForm, initialUI } from "./ui.js";
 
 const form = document.querySelector("#entry-form");
 const searchInput = document.querySelector("#search");
 const moodFilter = document.querySelector("#filter-by-mood");
 const entriesContainer = document.querySelector("#entries-container");
+const entryModal = document.getElementById("entry-container");
 
 const savedEntries = getFromStorage(); // initializing the app...
 setEntries(savedEntries);
 renderEntries(getEntries());
+
+document.addEventListener("DOMContentLoaded", () => {
+	initialUI();
+	const savedEntries = getFromStorage();
+	renderEntries(savedEntries);
+});
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -42,7 +40,7 @@ form.addEventListener("submit", (e) => {
 		return;
 	}
 
-	// on submit, add journal if editId already exists...
+	// on submit, update journal if editId already exists... else, add journal
 	if (editId) {
 		updateEntry(Number(editId), { title, content, mood });
 		delete form.dataset.editId;
@@ -67,6 +65,7 @@ entriesContainer.addEventListener("click", (e) => {
 		const id = Number(e.target.dataset.id);
 		const entry = getEntries().find((e) => e.id === id);
 		prefillForm(entry);
+		entryModal.classList.remove("hidden");
 	}
 });
 
