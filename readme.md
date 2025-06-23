@@ -1,6 +1,6 @@
 # Journy Journal 📝
 
-**Journy Journal** is a simple and elegant web-based journaling app that allows users to _write, edit,_ and _manage_ personal journal entries.
+**Journy Journal** is a digital journaling app that allows users to capture their thoughts, track moods, and manage entries through an intuitive and interactive interface. It has a simple and elegant interface, that allows users to _write, edit,_ and _manage_ personal journal entries easily and interestingly.
 It includes a _mood filter_ and _search functionality_ to help users reflect on past entries based on mood or keyword.
 
 ## 🌟 Features
